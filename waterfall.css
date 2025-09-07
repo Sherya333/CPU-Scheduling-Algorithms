@@ -1,0 +1,83 @@
+.waterfall-container {
+    margin: 20px auto;
+    padding: 20px;
+    background: #e9ecef;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    text-align: left;
+}
+
+.waterfall-steps {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.waterfall-steps::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #007bff;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid #007bff;
+    width: 80px;
+    height: 80px;
+    justify-content: center;
+    position: relative;
+}
+
+.step span {
+    font-size: 1.5em;
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.step p {
+    font-size: 0.9em;
+    color: #333;
+    margin: 0;
+}
+
+.step.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.step.active span {
+    color: white;
+}
+
+.step.completed::before {
+    content: '\2713'; /* Checkmark */
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #28a745;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
